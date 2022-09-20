@@ -55,42 +55,52 @@ namespace Uno
                     }
                     else if (selection == players[currentPlayer].Hand.Count() + 1 && (deck.Count() >= 1 || discard.Count > 1))
                     {
+                        Card drawnCard = deck[0];
+                        
                         Draw(1, currentPlayer, false);
                         while (true)
                         {
                             Header();
                             PrintPlayers(currentPlayer);
-                            Console.WriteLine($"\nCurrent Card: {discard[0].Color} {discard[0].Value}\n");
-                            Console.Write($"{players[currentPlayer].Name} drew {players[currentPlayer].Hand[selection - 1].Color} {players[currentPlayer].Hand[selection - 1].Value}, do you want to play it? (Yy/Nn): ");
-                            string choice = Console.ReadLine() ?? "";
-                            if (choice == "y" || choice == "Y")
+                            Console.WriteLine($"\nCurrent Card: {((WildCardColor == CardColor.Nothing) ? discard[0].Color : WildCardColor)} {discard[0].Value}\n");
+                            if (ValidMove(players[currentPlayer].Hand[players[currentPlayer].Hand.IndexOf(drawnCard)], discard[0], ref WildCardColor))
                             {
-                                if (ValidMove(players[currentPlayer].Hand[selection - 1], discard[0], ref WildCardColor))
+                                Console.Write($"{players[currentPlayer].Name} drew {players[currentPlayer].Hand[players[currentPlayer].Hand.IndexOf(drawnCard)].Color} {players[currentPlayer].Hand[players[currentPlayer].Hand.IndexOf(drawnCard)].Value}, do you want to play it? (Yy/Nn): ");
+                                string choice = Console.ReadLine() ?? "";
+                                if (choice == "y" || choice == "Y")
                                 {
-                                    CardAction(ref IncrementOrDecrement, ref currentPlayer, selection, ref WildCardColor, false);
+                                        CardAction(ref IncrementOrDecrement, ref currentPlayer, players[currentPlayer].Hand.IndexOf(drawnCard), ref WildCardColor, false);
+                                    break;
                                 }
-                                break;
-                            }
-                            else if (choice == "n" || choice == "N")
-                            {
-                                break;
+                                else if (choice == "n" || choice == "N")
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"Please Enter a valid selection");
+                                    Delay(2000);
+                                    continue;
+                                }
                             }
                             else
                             {
-                                Console.WriteLine($"Please Enter a valid selection");
+                                Console.WriteLine($"{players[currentPlayer].Name} drew {players[currentPlayer].Hand[players[currentPlayer].Hand.IndexOf(drawnCard)].Color} {players[currentPlayer].Hand[players[currentPlayer].Hand.IndexOf(drawnCard)].Value}. This is not a card that can currently be played");
+                                Console.WriteLine("Moving onto the next player");
                                 Delay(2000);
-                                continue;
+                                break;
                             }
+
                         }
                         break;
                     }
-                    else if(selection == players[currentPlayer].Hand.Count() + 1)
+                    else if (selection == players[currentPlayer].Hand.Count() + 1)
                     {
                         break;
                     }
                     if (ValidMove(players[currentPlayer].Hand[selection - 1], discard[0], ref WildCardColor))
                     {
-                        CardAction(ref IncrementOrDecrement, ref currentPlayer, selection, ref WildCardColor, false);
+                        CardAction(ref IncrementOrDecrement, ref currentPlayer, selection - 1, ref WildCardColor, false);
                         ResetDeck();
                         break;
                     }
@@ -122,15 +132,15 @@ namespace Uno
                         if (currentPlayer > 0) IncrementOrDecrement(ref currentPlayer);
                         else currentPlayer = (players.Count() - 1);
                     }
-                }            
+                }
             }
         }
         private void CardAction(ref Act IncrementOrDecrement, ref int currentPlayer, int selection, ref CardColor WildCardColor, bool firstIteration)
         {
             WildCardColor = CardColor.Nothing;
             if (!(firstIteration))
-            { 
-                discard.Insert(0, players[currentPlayer].Hand[selection - 1]);
+            {
+                discard.Insert(0, players[currentPlayer].Hand[selection]);
                 players[currentPlayer].Hand.Remove(players[currentPlayer].Hand[selection - 1]);
             }
             if (discard[0].Value == CardValue.Skip)
@@ -221,6 +231,7 @@ namespace Uno
                         break;
 
                     }
+                    break;
                 }
             }
         }
@@ -240,7 +251,7 @@ namespace Uno
         }
         private bool NoValidMoves(Player p, Card check, ref CardColor WildCardColor)
         {
-            foreach(Card c in p.Hand)
+            foreach (Card c in p.Hand)
             {
                 if (ValidMove(c, check, ref WildCardColor))
                 {
