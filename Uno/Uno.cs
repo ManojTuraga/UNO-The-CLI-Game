@@ -21,7 +21,7 @@ namespace Uno
             deck.Add(new Card(CardColor.Blue, CardValue.Zero));
             deck.Add(new Card(CardColor.Yellow, CardValue.Zero));
 
-            for (int value = 1; value <= 1; value++)
+            for (int value = 1; value <= 12; value++)
             {
                 for (int color = 0; color <= 3; color++)
                 {

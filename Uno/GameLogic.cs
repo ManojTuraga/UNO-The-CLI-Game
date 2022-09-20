@@ -141,7 +141,7 @@ namespace Uno
             if (!(firstIteration))
             {
                 discard.Insert(0, players[currentPlayer].Hand[selection]);
-                players[currentPlayer].Hand.Remove(players[currentPlayer].Hand[selection - 1]);
+                players[currentPlayer].Hand.Remove(players[currentPlayer].Hand[selection]);
             }
             if (discard[0].Value == CardValue.Skip)
             {
