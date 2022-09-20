@@ -1,0 +1,15 @@
+C:\Users\Manoj\OneDrive\Documents\Uno\bin\Debug\net6.0\Uno.exe
+C:\Users\Manoj\OneDrive\Documents\Uno\bin\Debug\net6.0\Uno.deps.json
+C:\Users\Manoj\OneDrive\Documents\Uno\bin\Debug\net6.0\Uno.runtimeconfig.json
+C:\Users\Manoj\OneDrive\Documents\Uno\bin\Debug\net6.0\Uno.dll
+C:\Users\Manoj\OneDrive\Documents\Uno\bin\Debug\net6.0\Uno.pdb
+C:\Users\Manoj\OneDrive\Documents\Uno\obj\Debug\net6.0\Uno.csproj.AssemblyReference.cache
+C:\Users\Manoj\OneDrive\Documents\Uno\obj\Debug\net6.0\Uno.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Manoj\OneDrive\Documents\Uno\obj\Debug\net6.0\Uno.AssemblyInfoInputs.cache
+C:\Users\Manoj\OneDrive\Documents\Uno\obj\Debug\net6.0\Uno.AssemblyInfo.cs
+C:\Users\Manoj\OneDrive\Documents\Uno\obj\Debug\net6.0\Uno.csproj.CoreCompileInputs.cache
+C:\Users\Manoj\OneDrive\Documents\Uno\obj\Debug\net6.0\Uno.dll
+C:\Users\Manoj\OneDrive\Documents\Uno\obj\Debug\net6.0\refint\Uno.dll
+C:\Users\Manoj\OneDrive\Documents\Uno\obj\Debug\net6.0\Uno.pdb
+C:\Users\Manoj\OneDrive\Documents\Uno\obj\Debug\net6.0\Uno.genruntimeconfig.cache
+C:\Users\Manoj\OneDrive\Documents\Uno\obj\Debug\net6.0\ref\Uno.dll
