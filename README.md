@@ -1,6 +1,6 @@
 # UNO!® The CLI Game
 ## About
-This program brings the classic game of UNO!® to the Command Line. Take turns playing a round of UNO® with a group of 2 to 10 people and try to be the first to clear your hand. 
+This project brings the classic game of UNO!® to the Command Line. Take turns playing a round of UNO® with a group of 2 to 10 people and try to be the first to clear your hand. 
 ## Rules
 The rules for this version of UNO® follow closely to the original rules, but with some deviations. Check out below to see the setup, gameplay, and rules for special cards
 ### Setup
