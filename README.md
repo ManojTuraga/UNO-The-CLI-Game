@@ -1,8 +1,8 @@
-# UNO! The CLI Game
+# UNO!® The CLI Game
 ## About
-This program brings the classic game of UNO! to the Command Line. Take turns playing a round of UNO with a group of 2 to 10 people and try to be the first to clear your hand. 
+This program brings the classic game of UNO!® to the Command Line. Take turns playing a round of UNO® with a group of 2 to 10 people and try to be the first to clear your hand. 
 ## Rules
-The rules for this version of UNO follow closely to the original rules, but with some deviations. Check out below to see the setup, gameplay, and rules for special cards
+The rules for this version of UNO® follow closely to the original rules, but with some deviations. Check out below to see the setup, gameplay, and rules for special cards
 ### Setup
 The game setup starts with finding a group of 2 to 10 people to play with. There will be no dealer since the program will handle all of that. Each player will be dealt 7 cards from the Deck and the first card from the remaining cards is the first card in play (see Special conditions in the event the first card is a special one). The order of play is decided at random.
 ### Gameplay
@@ -36,7 +36,7 @@ Selection:
 ```
 
 ## The Cards
-The version of UNO this program is based off has 108 cards with the main colors being Red, Green, Blue, and Yellow. These include both numbered cards and special cards and each serve a different purpose
+The version of UNO® this program is based off has 108 cards with the main colors being Red, Green, Blue, and Yellow. These include both numbered cards and special cards and each serve a different purpose
 ### Numbered Cards
 These Cards make up the bulk of the deck (76 Cards). For each Color in the deck, there will be<br />
 1. One 0 Card<br />
@@ -52,7 +52,7 @@ These cards are types of cards that can affect the actions of the game or the pl
 4. Four Normal Wildcards per color = 4 Cards<br />
 5. Four DrawFour Wildcards per color = 4 Cards<br />
 <br />
-NOTE: Unlike certain versions of UNO, the rseult of these Cards CANNOT be avoided. That means that these cards cannot be stacked
+NOTE: Unlike certain versions of UNO®, the rseult of these Cards CANNOT be avoided. That means that these cards cannot be stacked
 
 #### Skip Card
 This card can be used to skip the next player in the order of play. Can be played on cards of the same color, other skip cards, or on a Wildcard. If the first card in play is a skip card, the first player is skipped and the play starts with the second player in the order
